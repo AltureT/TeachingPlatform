@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+{% if latest_problem_list %}
+    <ul>
+        {% for problem in latest_problem_list %}
+            <li><a href="/problems/{{ problem.id }}/">
+                {{ problem.problem_text }}
+            </a></li>
+        {% endfor %}
+    </ul>
+{% else %}
+    <p>暂时没有更新题目</p>
+{% endif %}
+
+</body>
+</html>

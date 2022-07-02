@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+{% load static %}
+
+<p>{{ problem.problem_text| linebreaks }}</p>
+<img src="{% static problem.problem_image.url %} " alt="">
+
+<ul>
+    <li>上传者：{{ problem_info.author }}</li>
+    <li>所属试卷：{{ problem_info.source }}</li>
+    <li>知识点：{{ problem_info.knowledge_points }}</li>
+    <li>发布时间：{{ problem_info.publish_date }}</li>
+</ul>
+
+</body>
+</html>
