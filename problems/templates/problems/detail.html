@@ -9,8 +9,9 @@
 {% load static %}
 
 <p>{{ problem.problem_text| linebreaks }}</p>
-<img src="{% static problem.problem_image.url %} " alt="">
-
+{% if problem.problem_image %}
+    <img src="{% static problem.problem_image.url %} " alt="">
+{% endif %}
 <ul>
     <li>上传者：{{ problem_info.author }}</li>
     <li>所属试卷：{{ problem_info.source }}</li>

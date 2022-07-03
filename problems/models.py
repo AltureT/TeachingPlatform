@@ -18,7 +18,7 @@ class Problem(models.Model):
         GAP = 'fill gaps', _('填空题')
 
     problem_text = models.TextField('题目内容')
-    problem_image = models.ImageField('图片', upload_to='%Y/%m/%d')
+    problem_image = models.ImageField('图片', upload_to='%Y/%m/%d', blank=True)
     difficulty = models.CharField(
         '难度',
         choices=Difficulty.choices,
@@ -43,7 +43,7 @@ class ProblemInformation(models.Model):
 
     problem = models.ForeignKey(Problem, on_delete=models.CASCADE, related_name='info_of')
     author = models.CharField('上传者', max_length=20, )
-    source = models.CharField('所属试卷', max_length=50, )
+    source = models.CharField('所属试卷', max_length=50, blank=True)
     publish_date = models.DateField('发布时间')
     knowledge_points = models.CharField(
         '知识点',
