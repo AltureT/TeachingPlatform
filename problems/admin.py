@@ -3,4 +3,4 @@ from .models import Problem, ProblemInformation
 
 # Register your models here.
 admin.site.register(Problem)
-# admin.site.register(ProblemInformation)
+admin.site.register(ProblemInformation)

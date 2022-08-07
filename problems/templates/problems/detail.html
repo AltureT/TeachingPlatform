@@ -7,17 +7,19 @@
 <body>
 
 {% load static %}
-
-<p>{{ problem.problem_text| linebreaks }}</p>
+{% autoescape off %}
+{{ problem.problem_text }}
+{% endautoescape %}
 {% if problem.problem_image %}
     <img src="{% static problem.problem_image.url %} " alt="">
 {% endif %}
-<ul>
-    <li>上传者：{{ problem_info.author }}</li>
-    <li>所属试卷：{{ problem_info.source }}</li>
-    <li>知识点：{{ problem_info.knowledge_points }}</li>
-    <li>发布时间：{{ problem_info.publish_date }}</li>
-</ul>
-
+{% if problem_info.author %}
+    <ul>
+        <li>上传者：{{ problem_info.author }}</li>
+        <li>所属试卷：{{ problem_info.source }}</li>
+        <li>知识点：{{ problem_info.knowledge_points }}</li>
+        <li>发布时间：{{ problem_info.publish_date }}</li>
+    </ul>
+{% endif %}
 </body>
 </html>

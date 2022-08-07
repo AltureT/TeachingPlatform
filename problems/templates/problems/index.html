@@ -6,14 +6,17 @@
 </head>
 <body>
 {% load static %}
+
+<ul>
+    <li><a href="{% url 'problems:add' %}">添加题目</a></li>
+    <li><a href="{% url 'problems:index' %}">浏览题目</a></li>
+</ul>
+
 {% if latest_problem_list %}
     <ul>
         {% for problem in latest_problem_list %}
             <li><a href="{% url 'problems:detail' problem.id %}">
-                {{ problem.problem_text | linebreaks }}
-                {% if problem.problem_image %}
-                    <img src="{% static problem.problem_image.url %}" alt="">
-                {% endif %}
+                {{ problem.problem_text | safe }}
             </a></li>
         {% endfor %}
     </ul>

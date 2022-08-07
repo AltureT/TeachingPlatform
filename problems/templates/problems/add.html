@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>新增题目</title>
+</head>
+<body>
+<form action="{% url 'problems:addop' %}" method="post"></form>
+{% csrf_token %}
+<fieldset>
+    <legend><h1>新增题目</h1></legend>
+    <input type="text">
+</fieldset>
+</body>
+</html>

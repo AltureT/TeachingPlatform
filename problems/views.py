@@ -40,3 +40,13 @@ def detail(request, problem_id):
         'problem': problem,
         'problem_info': problem_info,
     })
+
+
+def add(request):
+    context = {}
+    return render(request, 'problems/add.html', context)
+
+
+def addop(request):
+    context = {}
+    return render(request, 'problems/add.html', context)

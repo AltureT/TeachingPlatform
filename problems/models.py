@@ -3,6 +3,8 @@ import datetime
 from django.db import models
 from django.utils import timezone
 from django.utils.translation import gettext_lazy as _
+from ckeditor.fields import RichTextField
+from ckeditor_uploader.fields import RichTextUploadingField
 
 
 # Create your models here.
@@ -17,7 +19,8 @@ class Problem(models.Model):
         CHOOSE = 'choose correct words', _('选择题')
         GAP = 'fill gaps', _('填空题')
 
-    problem_text = models.TextField('题目内容')
+    # problem_text = models.TextField('题目内容')
+    problem_text = RichTextUploadingField(verbose_name='题目内容')
     problem_image = models.ImageField('图片', upload_to='%Y/%m/%d', blank=True)
     difficulty = models.CharField(
         '难度',
