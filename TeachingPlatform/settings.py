@@ -25,7 +25,7 @@ SECRET_KEY = '@=*i3nx=&xyndahzhcsdbb7^)+dvo(mos#!@yjhgntuqi#w*fc'
 # DEBUG = True
 DEBUG = False
 
-ALLOWED_HOSTS = ['127.0.0.1']
+ALLOWED_HOSTS = ['127.0.0.1', '101.34.15.195']
 CSRF_COOKIE_SECURE = True
 SESSION_COOKIE_SECURE = True
 SECURE_SSL_REDIRECT = True
