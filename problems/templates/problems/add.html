@@ -1,3 +1,29 @@
+{#<!DOCTYPE html>#}
+{#<html lang="zh">#}
+{#<head>#}
+{#    <meta charset="UTF-8">#}
+{#    <title>添加题目</title>#}
+{#</head>#}
+{#<body>#}
+{##}
+{#{% if success %}#}
+{#    <p>添加成功</p>#}
+{#{% endif %}#}
+{##}
+{#<form action="{% url 'problems:add_to_db' %}" method="post">#}
+{#    {% csrf_token %}#}
+{#    <fieldset>#}
+{#        <legend><h1>添加题目</h1></legend>#}
+{#        {{ problem.media }}#}
+{#        {{ problem.as_p }}#}
+{#        {{ problem_info.as_p }}#}
+{#        <input type="submit" value="提交">#}
+{#    </fieldset>#}
+{#</form>#}
+{#</body>#}
+{#</html>#}
+
+
 <!DOCTYPE html>
 <html lang="zh">
 <head>
@@ -5,13 +31,18 @@
     <title>添加题目</title>
 </head>
 <body>
-<form action="{% url 'problems:addop' %}" method="post">
+
+{% if success %}
+    <p>添加成功</p>
+{% endif %}
+
+<form action="{% url 'problems:add_to_db' %}" method="post">
     {% csrf_token %}
     <fieldset>
         <legend><h1>添加题目</h1></legend>
         {{ problem.media }}
         {{ problem.as_p }}
-        {{ problem_info.as_p }}
+        <input type="submit" value="提交">
     </fieldset>
 </form>
 </body>

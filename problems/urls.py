@@ -7,5 +7,5 @@ urlpatterns = [
     path('', views.IndexView.as_view(), name='index'),
     path('<int:problem_id>/', views.detail, name='detail'),
     path('add/', views.add, name='add'),
-    path('addop', views.addop, name='addop'),
+    path('addtodb', views.add_to_db, name='add_to_db'),
 ]

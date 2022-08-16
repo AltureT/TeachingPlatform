@@ -29,7 +29,6 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
-    'menu.apps.MenuConfig',
     'problems.apps.ProblemsConfig',
     'ckeditor',
     'ckeditor_uploader',
