@@ -22,19 +22,21 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = '@=*i3nx=&xyndahzhcsdbb7^)+dvo(mos#!@yjhgntuqi#w*fc'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-# DEBUG = True
-DEBUG = False
+DEBUG = True
+# DEBUG = False
 
-ALLOWED_HOSTS = ['127.0.0.1', '101.34.15.195']
-CSRF_COOKIE_SECURE = True
-SESSION_COOKIE_SECURE = True
-SECURE_SSL_REDIRECT = True
-SECURE_HSTS_PRELOAD = True
-SECURE_HSTS_INCLUDE_SUBDOMAINS = True
-SECURE_HSTS_SECONDS = 86400
+if DEBUG == False:
+    ALLOWED_HOSTS = ['*']
+    # CSRF_COOKIE_SECURE = True
+    # SESSION_COOKIE_SECURE = True
+    # SECURE_SSL_REDIRECT = True
+    # SECURE_HSTS_PRELOAD = True
+    # SECURE_HSTS_INCLUDE_SUBDOMAINS = True
+    # SECURE_HSTS_SECONDS = 86400
+else:
+    ALLOWED_HOSTS = []
 
 # Application definition
-
 INSTALLED_APPS = [
     'problems.apps.ProblemsConfig',
     'ckeditor',
@@ -145,11 +147,7 @@ STATICFILES_DIRS = [
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-# MEDIA_ROOT = 'problems/static/media'
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'static/')
-# MEDIA_ROOT = 'static/'
-# MEDIA_ROOT = '/Users/alturet/Dropbox/TeachingPlatform/problems/media'
-# MEDIA_URL = 'problems/static/media/'
 
 CKEDITOR_UPLOAD_PATH = 'upload/'
