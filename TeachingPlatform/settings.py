@@ -22,7 +22,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = '@=*i3nx=&xyndahzhcsdbb7^)+dvo(mos#!@yjhgntuqi#w*fc'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 # DEBUG = False
 
 if DEBUG == False:
@@ -34,7 +34,7 @@ if DEBUG == False:
     # SECURE_HSTS_INCLUDE_SUBDOMAINS = True
     # SECURE_HSTS_SECONDS = 86400
 else:
-    ALLOWED_HOSTS = []
+    ALLOWED_HOSTS = ['*']
 
 # Application definition
 INSTALLED_APPS = [
