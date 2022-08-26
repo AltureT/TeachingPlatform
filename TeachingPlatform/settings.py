@@ -22,7 +22,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = '@=*i3nx=&xyndahzhcsdbb7^)+dvo(mos#!@yjhgntuqi#w*fc'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 # DEBUG = False
 
 if DEBUG == False:
