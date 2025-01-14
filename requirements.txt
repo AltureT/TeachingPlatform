@@ -4,4 +4,4 @@ django-js-asset==2.0.0
 filelock==3.8.0
 Pillow==9.2.0
 platformdirs==2.5.2
-virtualenv==20.16.3
+virtualenv==20.26.6
